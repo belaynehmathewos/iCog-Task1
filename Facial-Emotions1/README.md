@@ -4,7 +4,7 @@ This app recognizes human emotions from a webcam. Performed by using OpenCV and 
 
 ---
 
-* Computer vision impelemented by OpenCV. ...............................................................................
+* Computer vision impelemented by OpenCV.                                                             
 *Convolusional NN impelemented by Keras with Tensorflow as backend.
 
 Before running into the code:     
