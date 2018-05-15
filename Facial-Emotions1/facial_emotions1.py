@@ -150,7 +150,7 @@ if __name__ == '__main__':
     # parameters for loading data and images
     #emotion_model_path = './models/emotion_recognition_models/emotion_model.hdf5'
     emotion_model_path = './models/emotion_recognition_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
-    emotion_labels = get_labels('fer2013')
+    emotion_labels = get_labels('yes')
 
     # hyper-parameters for bounding boxes shape
     #frame_window = 14
