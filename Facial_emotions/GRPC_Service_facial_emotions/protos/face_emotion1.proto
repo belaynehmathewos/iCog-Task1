@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package face_emotion1;
+
+service facial_emotion_recognizer {
+  //*rpc image_processor (stream image_frame) returns (stream ret) {}
+ // rpc image_processor (stream image_frame) returns (image_frame){}
+  rpc image_processor (stream image_frame) returns (stream Rects){}
+  //*rpc emotion_classifier (emotion) returns (emotion) {}
+  rpc emotion_classifier (stream emotion) returns (stream emotion){}
+  //*rpc img_trans_r (img_d) returns (circ) {}
+  rpc emotion_classifier (stream Emotion_labels) returns (stream Emotion_labels){}
+}
+
+message image_frame {
+//  repeated bytes image_data = 1;
+  bytes image_data = 1;
+  //repeated Rect img_data = 1;
+//  rect img_data = 1;
+  //repeated Point point = 1;
+  //Point point = 1;
+  //*string encoding = 2;
+  //int32 encoding = 2;
+//  repeated Point points = 1;
+}
+
+message Point{
+  int32 x = 1;
+  int32 y = 2;
+}
+message Rects{
+ repeated Rect rects = 1;
+}
+message Rect{
+  int32 x = 1;
+  int32 y = 2;
+  int32 w = 3;
+  int32 h = 4;
+}
+message ret {
+  string reply = 1;
+}
+
+message emotion{
+  //*bytes emotion_labels = 1;
+  //*string emotion_labels = 1;
+  //*repeated Emotion_labels emotion_labels= 1;
+  Emotion_labels emotion_labels = 1;
+}
+message Emotion_labels{
+  string angry = 1;
+  string disgust = 2;
+  string fear = 3;
+  string happy = 4;
+  string sad = 5;
+  string surprise = 6;
+  string neutral = 7;
+}
+
+
+
+
+

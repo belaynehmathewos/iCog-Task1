@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package face_emotions;
+
+service img_trans_srv {
+  rpc img_trans_s (img_d) returns (ret) {}
+  rpc img_trans_f (img_d) returns (rects) {}
+  rpc img_trans_r (img_d) returns (circ) {}
+}
+
+message img_d {
+  bytes img_data = 1;
+  string encoding = 2;
+}
+
+message ret {
+  string reply = 1;
+}
+
+message rect {
+  int32 x = 1;
+  int32 y = 2;
+  int32 w = 3;
+  int32 h = 4;
+}
+
+message rects {
+  repeated rect rcts = 1;
+}
+
+message circ {
+  int32 cx = 1;
+  int32 cy = 2;
+  float r = 3;
+}
